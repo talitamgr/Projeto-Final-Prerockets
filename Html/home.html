@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Library - Home</title>
+        <meta charset="utf-8">  
+        <link rel="stylesheet" href="../CSS/styleHome.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logoLibrary">
+                <img src="../imgLogin/Logo.svg" alt="Logo Library">
+            </div>
+            <div>
+                <div id="user">
+                    <img src="../imgHome/person_black_24dp (1).svg">
+                    <p class="nameUser">Usuário</p>
+                    <button class="headerBtn"><img src="../imgHome/Arrow.svg"></button>
+                </div>
+                <nav class="headerNav" style="display: none">
+                <a class="btnLogOut" href="../Html/login.html">Sair</a>
+                </nav>
+            </div>
+        </header>
+        <section class="menu">
+            <div class="card">
+                <a href="../Html/addNewBook.html">
+                    <div class="cardImg">
+                        <img src="../imgHome/add_circle_FILL0_wght400_GRAD0_opsz48.svg">
+                    </div>
+                    <div class="cardTitle">
+                        <p>Cadastrar novo livro</p>
+                    </div>
+                </a>                
+            </div>
+            <div class="card">
+                <a href="library.html">
+                    <div class="cardImg">
+                        <img src="../imgHome/import_contacts_FILL0_wght400_GRAD0_opsz48 (1).svg">
+                    </div>
+                    <div class="cardTitle">
+                        <p>Biblioteca</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="">
+                    <div class="cardImg">
+                        <img src="../imgHome/pending_actions_FILL0_wght400_GRAD0_opsz48.svg">
+                    </div>
+                    <div class="cardTitle">
+                        <p>Histórico de empréstimos</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </body>
+    <script src="../Js/logOut.js"></script>
+    <script src="../Js/addNewBook.js"></script>
+</html>

@@ -1,0 +1,263 @@
+body {
+    background-color: #F4F4F4;
+    color: #343A40;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: white;
+    height: 96px;
+    color: #495057;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 34px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#logoLibrary img {
+    max-width: 120px;
+    max-height: 48px;
+}
+
+#user {
+    display: flex;
+    justify-content: right;
+    text-transform: capitalize;
+}
+
+#user img {
+    width: 24px;
+}
+
+.headerBtn {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    margin-top: 12px;
+    border: 0;
+    padding: 0;
+}
+
+.headerNav {
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    height: 57px;
+    width: 148px;
+}
+
+.headerNav a {
+    display: block;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #2A2A2A;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+}
+
+.menu {
+    margin: 2.1%;
+    border-radius: 5px;
+    background-color: white;
+    height: 78vh;
+    padding: 24px;
+}
+
+.menuTitle h2 {
+    font-weight: normal;
+    font-size: 20px;
+    font-style: normal;
+    display: inline;
+    width: 251px;
+}
+
+.menuTitle a{
+    text-decoration: none;
+    color: #00000080;
+}
+
+.bookInformations {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.imgBook {
+    width: 172px;
+    height: 206px;
+    border: 2px dashed #FFC501;
+    color: #FFC501;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#coverLabel {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.basicInformations1 {
+    height: 206px;
+    margin-left: 3.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.basicInformations2 {
+    height: 206px;
+    margin-left: 3.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.basicInformations1 input,
+.basicInformations2 input {
+    border: 1px solid #133052;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+}
+
+#tittle,
+#nameAuthor,
+#date {
+    width: 350px;
+    height: 53px;
+}
+
+#synopsis {
+    width: 350px;
+    height: 129px;
+}
+
+#date {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.buttons {
+    margin-top: 5%;
+    margin-right: 15%;
+    display: flex;
+    justify-content: right;
+}
+
+.button {
+    width: 143px;
+    height: 53px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 1.5em;
+}
+
+.button-white {
+    border: 1px solid #133052;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.button-yellow {
+    border-radius: 5px;
+    background-color: #FFC501;
+    border: 0;
+}
+
+@media screen and (max-width:1400px) {
+    .buttons {
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width:1295px) {
+    .buttons {
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .imgBook,
+    .basicInformations1,
+    .basicInformations2 {
+        margin-top: 2%;
+    }
+
+    .menu {
+        height: max-content;
+    }
+}
+
+.material-textfield {
+    position: relative;
+}
+
+input+label,
+select+label {
+    position: absolute;
+    font-size: 1rem;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #133052;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: .1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+}
+
+input,
+select {
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: #133052;
+    transition: 0.1s ease-out;
+}
+
+input:focus,
+select:focus {
+    border: 2px solid #3E4756;
+}
+
+input:focus+label,
+select:focus+label {
+    color: #3E4756;
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+input[type=text]:not(:placeholder-shown)+label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+select:valid + label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+#date:valid + label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+

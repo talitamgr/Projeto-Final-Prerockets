@@ -1,0 +1,130 @@
+body {
+    background-color: #F4F4F4;
+    color: #343A40;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: white;
+    height: 96px;
+    color: #495057;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 34px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#logoLibrary img {
+    max-width: 120px;
+    max-height: 48px;
+}
+
+#user {
+    display: flex;
+    justify-content: right;
+    text-transform: capitalize;
+}
+
+#user img {
+    width: 24px;
+}
+
+.headerBtn {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    margin-top: 12px;
+    border: 0;
+    padding: 0;
+}
+
+.headerNav {
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    height: 57px;
+    width: 148px;
+}
+
+.headerNav a {
+    display: block;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #2A2A2A;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.menu {
+    margin: 2.1%;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    height: 78vh;
+}
+
+.card {
+    width: 250px;
+    height: 224px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.card a {
+    text-decoration: none;
+    color: #343A40;
+    font-weight: medium;
+}
+
+.cardImg {
+    background-color: #F4F4F4;
+    height: 67%;
+}
+
+.cardImg img {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 50%;
+}
+
+.cardTitle {
+    background-color: #FFFFFF;
+    text-align: center;
+    border: 3px solid #F4F4F4;
+    height: 33%;
+}
+
+.cardTitle p {
+    position: relative;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+.card:hover .cardImg {
+    background-color: #FFC501;
+}
+
+.card:hover .cardTitle {
+    border: 3px solid #FFC501;
+}
+
+@media screen and (max-width:800px) {
+    .card {
+        margin: 20px;
+    }
+
+    .menu {
+        height: max-content;
+    }
+}
