@@ -1,0 +1,268 @@
+body {
+    background-color: #F4F4F4;
+    color: #343A40;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: white;
+    height: 96px;
+    color: #495057;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 34px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#logoLibrary img {
+    max-width: 120px;
+    max-height: 48px;
+}
+
+#user {
+    display: flex;
+    justify-content: right;
+    text-transform: capitalize;
+}
+
+#user img {
+    width: 24px;
+}
+
+.headerBtn {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    margin-top: 12px;
+    border: 0;
+    padding: 0;
+}
+
+.headerNav {
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    height: 57px;
+    width: 148px;
+}
+
+.headerNav a {
+    display: block;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #2A2A2A;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+}
+
+.menu { 
+    margin: 2.1%;
+    border-radius: 5px;
+    background-color: white;
+    height: max-content;
+    padding: 24px;
+}
+
+.menuTitle h2{
+    font-weight: normal;
+    font-size: 20px;
+    font-style: normal;
+    display: inline;
+    width: 251px;
+}
+
+.menuTitle a{
+    text-decoration: none;
+    color: #00000080;
+}
+
+.barSearch{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    flex-wrap: wrap;
+}
+
+.barSearch img {
+    transform: translateX(28px);
+}
+
+.barSearch input{
+    padding: 18px;
+    padding-left: 33px;
+    box-sizing: border-box;
+}
+
+.barSearch button{
+    transform: translateX(-100px) 
+}
+
+input, select{
+    border: 1px solid #ADB5BD;
+    border-radius: 5px; 
+}
+input{
+    width: 666px;
+    height: 53px;
+}
+
+select{
+    transform: translateX(-48px);
+}
+
+.button-yellow{
+    width: 82px;
+    height: 37px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #FFC501;
+    border: 0;
+    cursor: pointer;
+}
+
+.material-textfield {
+    position: relative;
+}
+
+select + label {
+    position: absolute;
+    font-size: 1rem;
+    left: -48px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #133052;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: .1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+    width: 50%;
+}
+
+select {
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: #133052;
+    transition: 0.1s ease-out;
+}
+
+select:focus {
+    border: 2px solid #3E4756;
+}
+
+select:focus+label {
+    color: #3E4756;
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+    width: fit-content;
+}
+
+select:valid + label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+    width: fit-content;
+}
+
+.cardsBooks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 196px);
+    grid-auto-rows: 261px;
+    grid-gap: 40px;
+    padding: 76px 89px;
+}
+
+.card{
+    padding: 24px 2px;
+    box-sizing: border-box;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 196px;
+    height: 261px;
+    cursor: pointer;
+}
+
+.card img{
+    display: block;
+    width: 108px;
+    height: 155px;
+    margin: auto;
+}
+.card p{
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+}
+
+@media screen and (max-width:1000px) {
+   input{
+    width: auto;
+   }
+   .inputSearch {
+    margin-bottom: 5px;
+   }
+
+   .material-textfield{
+    margin-top: 5px;
+   }
+}
+
+.no-modal{
+    display: none;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:1;
+    /* -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in; */
+    pointer-events: none;
+}
+
+/* .modal:target {
+    opacity: 1;
+    pointer-events: auto;
+} */
+
+.modal > div {
+width: 400px;
+position: relative;
+margin: 10% auto;
+padding: 15px 20px;
+background: #fff;
+}
+/* .fechar {
+     position: absolute; 
+    width: 30px;
+    right: -15px;
+    top: -20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    background: #ff4545;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #8d0000;
+  } */

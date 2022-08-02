@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Library</title>
+        <meta charset="utf-8">  
+        <link rel="stylesheet" href="../CSS/styleLibrary.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logoLibrary">
+                <img src="../imgLogin/Logo.svg" alt="Logo Library">
+            </div>
+            <div>
+                <div id="user">
+                    <img src="../imgHome/person_black_24dp (1).svg">
+                    <p class="nameUser">Usuário</p>
+                    <button class="headerBtn"><img src="../imgHome/Arrow.svg"></button>
+                </div>
+                <nav class="headerNav" style="display: none">
+                <a href="./login.html" class="btnLogOut">Sair</a>
+                </nav>
+            </div>
+        </header>
+        <section class="menu">
+            <div class="menuTitle">
+                <a href="../Html/home.html"><img src="../imgAdd/chevron_left_FILL0_wght400_GRAD0_opsz48.svg">
+                <h2>Home </a><strong>/ Biblioteca</strong></h2>
+            </div>
+            <div class="barSearch">
+                <div class="inputSearch">
+                    <img src="../imgAdd/Caminho 263.svg">
+                    <input type="text" id="searchTitle" placeholder="Pesquisar livro...">
+                    <button type="submit" class="button-yellow" onclick="searchBook()">Buscar</button>
+                </div>
+                <div class="material-textfield">
+                    <select id="select" style="min-width: 260px; min-height: 53px" required>
+                        <option value="">Selecione</option>
+                        <option value="genre">Gênero</option>
+                        <option value="author">Autor(a)</option>
+                        <option value="systemEntryDate">Data de entrada</option>
+                        <option value="tittle">Título</option>
+                    </select>
+                    <label>Filtrar</label>
+                </div>
+            </div>
+
+            <div class="cardsBooks">
+                
+            </div>
+
+            <div class="no-modal">
+                <button class="fechar">x</a>
+                <h2>Janela Modal</h2>
+                <p>Esta é uma simples janela de modal.</p>
+                <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>
+            </div>
+
+        </section>
+        <script src="../Js/logOut.js"></script>
+        <script src="../Js/library.js"></script>
+    </body>
+</html>
