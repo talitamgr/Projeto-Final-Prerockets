@@ -4,6 +4,9 @@
         <title>Library</title>
         <meta charset="utf-8">  
         <link rel="stylesheet" href="../CSS/styleLibrary.css">
+        <link rel="stylesheet" href="../CSS/styleModalBook.css">
+        <link rel="stylesheet" href="../CSS/styleModalRentBook.css">
+        <link rel="stylesheet" href="../CSS/styleModalReturnBook.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -56,10 +59,41 @@
         <div class="no-modal" id="modal">
             <div class="scrollModal">
 
+            </div>            
+        </div>
+        <div class="no-modalRent">
+            <div class="scrollModalRent">
+                <div class="modalRentElements">
+                    <button class="btnClose" onclick="closeModalRent()">X</button>
+                    <h2>Informe os dados do aluno antes de continuar</h2>
+                    <div class="material-textfield">
+                        <input type="text" placeholder=" " id="nameStudent" required>
+                        <label>Nome do aluno</label>
+                    </div>
+                    <div class="material-textfield">
+                        <input type="text" placeholder=" " id="classStudent" required>
+                        <label>Turma</label>
+                    </div>
+                    <div class="material-textfield">
+                        <input type="date" id="dateLoan" required>
+                        <label>Data de entrada</label>
+                    </div>
+                    <div class="material-textfield">
+                        <input type="date" id="dateDelivery" required>
+                        <label>Data de entrega</label>
+                    </div>
+                    <button class="btnRent saveRent">Emprestar</button>
+                </div>
             </div>
-            
+        </div>
+        <div class="no-modalReturn">
+            <div class="scrollModalReturn">
+
+            </div>            
         </div>
         <script src="../Js/logOut.js"></script>
         <script src="../Js/library.js"></script>
+        <!-- <script src="../Js/readingJson.js"></script> -->
+        <script src="../Js/modal.js"></script>
     </body>
 </html>

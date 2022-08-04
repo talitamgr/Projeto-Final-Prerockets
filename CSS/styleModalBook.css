@@ -1,0 +1,183 @@
+.no-modal {
+    display: none;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    opacity: 1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+
+.modal:target {
+    opacity: 1;
+}
+
+.modalElements {
+    color: #3E4756;
+    margin: 0 16px;
+    display: grid;
+    grid-template-columns: 272px repeat(3, 1fr);
+    grid-template-rows: 24px 390px 53px;
+    grid-gap: 32px 40px;
+    padding: 24px;
+    height: 585px;
+    box-sizing: border-box;
+}
+
+.scrollModal {
+    border: 1px solid #707070;
+    margin: 55px auto;
+    background-color: white;
+    width: 816px;
+}
+
+.btnClose {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    background-color: white;
+    font-size: 20px;
+    font-family: "Roboto";
+    color: black;
+    border: 0;
+    text-align: right;
+    font-weight: 600;
+    display: block;
+}
+
+.modalElements img {
+    width: 272px;
+    height: 390px;
+    display: block;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.modalElements h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.modalElements h4 {
+    margin-top: 24px;
+}
+
+.modalElements p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+}
+
+.modalElements div {
+    grid-column: 2/5;
+    grid-row: 2/3;
+}
+
+.btnRent {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-color: #FFC501;
+    border: 1px solid #ADB5BD;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: 700;
+    height: 53px;
+    width: 272px;
+}
+
+.btnRent::before {
+    content: url(../imgAdd/auto_stories_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
+    width: 21px;
+    position: relative;
+    left: -12px;
+}
+
+.btnEdit {
+    width: 90px;
+    height: 53px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: white;
+    border: 1px solid #167CE2;
+    border-radius: 5px;
+    color: #167CE2;
+    font-weight: 700;
+    display: block;
+    margin-left: 36%;
+}
+
+.btnDelete {
+    width: 90px;
+    height: 53px;
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background-color: #FFFFFF;
+    border: 1px solid #ED5E5E;
+    border-radius: 5px;
+    color: #ED5E5E;
+    font-weight: 700;
+    display: block;
+    margin: auto;
+}
+
+.btnHistoric {
+    width: 90px;
+    height: 53px;
+    grid-column: 4/5;
+    grid-row: 3/4;
+    background-color: #FFFFFF;
+    border: 1px solid #ADB5BD;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: 700;
+    display: block;
+}
+
+@media screen and (max-width:900px) {
+    .modalElements {
+        height: max-content;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .scrollModal {
+        height: 585px;
+        overflow-y: scroll;
+        width: 80%;
+        max-width: 816px;
+    }
+
+    .modalElements img {
+        margin: auto;
+    }
+
+    .btnClose,
+    .btnRent {
+        width: 100%;
+    }
+
+    .btnEdit,
+    .btnDelete,
+    .btnHistoric {
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .btnEdit {
+        margin-left: 12%;
+    }
+
+}

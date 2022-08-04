@@ -75,7 +75,7 @@ header {
     width: 251px;
 }
 
-.menuTitle a{
+.menuTitle a {
     text-decoration: none;
     color: #00000080;
 }
@@ -221,7 +221,7 @@ select+label {
     pointer-events: none;
 }
 
-select+label{
+select+label {
     width: 50%;
 }
 
@@ -242,7 +242,7 @@ select:focus {
     border: 2px solid #3E4756;
 }
 
-select:focus + label{
+select:focus+label {
     width: fit-content;
 }
 
@@ -258,15 +258,13 @@ input[type=text]:not(:placeholder-shown)+label {
     transform: translateY(-50%) scale(.9);
 }
 
-select:valid + label {
+select:valid+label {
     top: 0;
     transform: translateY(-50%) scale(.9);
     width: fit-content;
 }
 
-#date:valid + label {
+#date:valid+label {
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
-
-
