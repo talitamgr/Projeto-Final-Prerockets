@@ -150,9 +150,7 @@ input[type=file] {
 
 .buttons {
     margin-top: 5%;
-    margin-right: 15%;
-    display: flex;
-    justify-content: right;
+    margin-left: 61%;
 }
 
 .button {
@@ -174,18 +172,6 @@ input[type=file] {
     border-radius: 5px;
     background-color: #FFC501;
     border: 0;
-}
-
-@media screen and (max-width:1400px) {
-    .buttons {
-        margin-right: 10%;
-    }
-}
-
-@media screen and (max-width:1295px) {
-    .buttons {
-        margin-right: 5%;
-    }
 }
 
 @media screen and (max-width:1200px) {

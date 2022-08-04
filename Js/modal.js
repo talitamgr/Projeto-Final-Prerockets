@@ -3,6 +3,7 @@ var divModalResponsive = document.querySelector('.scrollModal')
 var divModalRent = document.querySelector('.no-modalRent')
 var divModalReturn = document.querySelector('.no-modalReturn')
 var divScrollModalReturn = document.querySelector('.scrollModalReturn')
+var saveChange;
 
 function checkBook(index) {
     var rentHistory = data.books[index].rentHistory
@@ -33,6 +34,10 @@ function formatDate(date) {
 function closeModal() {
     divModal.classList.remove('modal')
     divModal.classList.add('no-modal')
+    if(saveChange==true){
+        saveNewData()
+        saveChange == false;
+    }
 }
 
 function openModal(index) {
@@ -111,31 +116,8 @@ function saveRent(i) {
             "deliveryDate": dateDeliveryConfig
         }
     )
-    // var file = new Blob([JSON.stringify({data})], {type: "text/plain"});
 
-    // const saveFile = async blob => {
-    //     try {
-    //         const handle = await window.showSaveFilePicker({
-    //         suggestedName: 'data.json',
-    //         types: [
-    //             {
-    //             description: "Json",
-    //             accept: { "text/plain": [".json"] },
-    //             },
-    //         ],
-    //         })
-
-    //         const writable = await handle.createWritable()
-    //         await writable.write(blob)
-    //         await writable.close()
-
-    //         return handle
-    //     } catch (err) {
-    //         console.error(err.name, err.message)
-    //     }
-    // }
-
-    // saveFile(file)
+    saveChange = true;
     reshowModal(i)
 }
 
@@ -202,7 +184,6 @@ function reshowModal(i) {
     modalRentConstructor('Sala', 'class', i, rentInformations)
     modalRentConstructor('Data da retirada', 'withdrawalDate', i, rentInformations)
     modalRentConstructor('Data da entrega', 'deliveryDate', i, rentInformations)
-
 }
 
 function modalRentConstructor(subtitle, item, index, modal) {
@@ -223,36 +204,17 @@ function modalRentConstructor(subtitle, item, index, modal) {
 function closeModalReturn() {
     divModalReturn.classList.remove('modalReturn')
     divModalReturn.classList.add('no-modalReturn')
+    if(saveChange==true){
+        saveNewData()
+        saveChange = false;
+    }
 }
 
 function returnBook(index) {
     var today = new Date()
     var date = setDate(today, false)
     data.books[index].rentHistory[data.books[index].rentHistory.length - 1].deliveryDate = date;
-    // var file = new Blob([JSON.stringify({ data })], { type: "text/plain" });
-
-    //     const saveFile = async blob => {
-    //         try {
-    //             const handle = await window.showSaveFilePicker({
-    //             suggestedName: 'data.json',
-    //             types: [
-    //                 {
-    //                     description: "Json",
-    //                     accept: { "text/plain": [".json"] },
-    //                 },
-    //             ],
-    //         })
-
-    //         const writable = await handle.createWritable()
-    //         await writable.write(blob)
-    //         await writable.close()
-
-    //         return handle
-    //     } catch (err) {
-    //         console.error(err.name, err.message)
-    //     }
-    // }
-    // saveFile(file)
+    saveChange = true;
     divModalReturn.classList.remove('modalReturn')
     divModalReturn.classList.add('no-modalReturn')
     openModal(index)
@@ -267,4 +229,31 @@ function deleteBook(index) {
 }
 function historicBook(index) {
 
+}
+
+function saveNewData(){
+    var file = new Blob([JSON.stringify({ data })], { type: "text/plain" });
+
+        const saveFile = async blob => {
+            try {
+                const handle = await window.showSaveFilePicker({
+                suggestedName: 'data.json',
+                types: [
+                    {
+                        description: "Json",
+                        accept: { "text/plain": [".json"] },
+                    },
+                ],
+            })
+
+            const writable = await handle.createWritable()
+            await writable.write(blob)
+            await writable.close()
+
+            return handle
+        } catch (err) {
+            console.error(err.name, err.message)
+        }
+    }
+    saveFile(file)
 }
