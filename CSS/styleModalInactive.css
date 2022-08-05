@@ -72,13 +72,14 @@
 .btnRentInactive {
     grid-column: 1/2;
     grid-row: 3/4;
-    background-color: #ffc4017d;
+    background-color: #ffc40166;
     border: 1px solid #ADB5BD;
     border-radius: 5px;
-    color: #000000a3;
+    color: #00000084;
     font-weight: 700;
     height: 53px;
     width: 272px;
+    cursor: not-allowed;
 }
 
 .btnRentInactive::before {
@@ -86,7 +87,7 @@
     width: 21px;
     position: relative;
     left: -12px;
-    filter: blur(1.2px);
+    filter: blur(1.3px);
 }
 
 @media screen and (max-width:900px) {
