@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="pt-br">
     <head>
-        <title>Library</title>
+        <title>Library - Biblioteca</title>
         <meta charset="utf-8">  
         <link rel="stylesheet" href="../CSS/styleLibrary.css">
         <link rel="stylesheet" href="../CSS/styleModalBook.css">
         <link rel="stylesheet" href="../CSS/styleModalRentBook.css">
         <link rel="stylesheet" href="../CSS/styleModalReturnBook.css">
+        <link rel="stylesheet" href="../CSS/styleModalDeleteBook.css">
+        <link rel="stylesheet" href="../CSS/styleModalInactive.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -88,6 +90,22 @@
         </div>
         <div class="no-modalReturn">
             <div class="scrollModalReturn">
+
+            </div>            
+        </div>
+        <div class="no-modalDelete">
+            <div class="modalDeleteElements">
+                <button class="btnClose" onclick="closeModalDelete()">X</button>
+                <h2>Inativar Livro</h2>
+                <div class="material-textfield">
+                    <input type="text" placeholder=" " id="descriptionDelete" required>
+                    <label>Descrição</label>
+                </div>
+                <button id="inactivate" class="btnDelete">Inativar</button>
+            </div>
+        </div>
+        <div class="no-modalInactive">
+            <div class="scrollModalInactive">
 
             </div>            
         </div>
