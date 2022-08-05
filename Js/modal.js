@@ -3,6 +3,9 @@ var divModalResponsive = document.querySelector('.scrollModal')
 var divModalRent = document.querySelector('.no-modalRent')
 var divModalReturn = document.querySelector('.no-modalReturn')
 var divScrollModalReturn = document.querySelector('.scrollModalReturn')
+var divModalDelete = document.querySelector('.no-modalDelete')
+var divModalInactive = document.querySelector('.no-modalInactive')
+var divScrollModalInactive = document.querySelector('.scrollModalInactive')
 var saveChange;
 
 function checkBook(index) {
@@ -22,6 +25,8 @@ function checkBook(index) {
                 openModal(index)
             }
         }
+    }else{
+        openModalInactive(index)
     }
 }
 
@@ -85,7 +90,9 @@ function buttonConstructor(btnClass, btnName, btnFunction, index, modal) {
     btn.classList.add(btnClass)
     var btnName = document.createTextNode(btnName)
     btn.appendChild(btnName)
-    btn.onclick = () => btnFunction(index)
+    if(btnFunction){
+        btn.onclick = () => btnFunction(index)
+    }
     modal.appendChild(btn)
 }
 
@@ -221,12 +228,103 @@ function returnBook(index) {
 }
 
 function editBook(index) {
+    localStorage.setItem('index', index);
+    window.location.href ='../Html/editBook.html'
+}
+
+function deleteBook(index) {
+    divModalDelete.classList.remove('no-modalDelete')
+    divModalDelete.classList.add('modalDelete')
+    divModalReturn.classList.remove('modalReturn')
+    divModalReturn.classList.add('no-modalReturn')
     divModal.classList.remove('modal')
     divModal.classList.add('no-modal')
+    var btnSaveInactivation = document.querySelector("#inactivate")
+    btnSaveInactivation.onclick = () => inactivateBook(index)
 }
-function deleteBook(index) {
 
+function inactivateBook(i){
+    saveChange=true;
+    var descriptionDelete = document.getElementById('descriptionDelete')
+    data.books[i].status.isActive = false;
+    data.books[i].status.description = descriptionDelete.value;
+    openModalInactive(i)
 }
+
+function openModalInactive(i){
+    divModalDelete.classList.remove('modalDelete')
+    divModalDelete.classList.add('no-modalDelete')
+    divModalInactive.classList.remove('no-modalInactive')
+    divModalInactive.classList.add('modalInactive')
+    divScrollModalInactive.textContent = ''
+    var modal = document.createElement('div')
+    modal.classList.add('modalInactiveBook')
+    var modalBook = document.createElement('div')
+    modalBook.classList.add('modalElements')
+    buttonConstructor("btnClose", "X", closeModalInactive, "", modalBook)
+    var img = document.createElement('img');
+    img.src = data.books[i].image
+    modalBook.appendChild(img);
+    var divInformations = document.createElement('div')
+    var title = document.createElement('h2')
+    var titleContent = document.createTextNode(data.books[i].tittle)
+    title.appendChild(titleContent)
+    divInformations.appendChild(title)
+    modalBook.appendChild(divInformations)
+
+    modalConstructor('Sinopse', 'synopsis', i, divInformations)
+    modalConstructor('Autor', 'author', i, divInformations)
+    modalConstructor('Gênero', 'genre', i, divInformations)
+    modalConstructor('Data de entrada', 'systemEntryDate', i, divInformations)
+    buttonConstructor("btnRentInactive", "Emprestar", null , i, modalBook)
+    buttonConstructor("btnEdit", "Editar", editBook, i, modalBook)
+    buttonConstructor("btnActive", "Ativar", activeBook, i, modalBook)
+    buttonConstructor("btnHistoric", "Histórico", historicBook, i, modalBook)
+
+    modal.appendChild(modalBook)
+    divScrollModalInactive.appendChild(modal)
+    var inactivationInformations = document.createElement('div')
+    inactivationInformations.classList.add('inactivationInformations')
+    var datas = document.createElement('h2')
+    var datasContent = document.createTextNode('Informações da inativação')
+    datas.appendChild(datasContent)
+    modal.appendChild(datas)
+    modal.appendChild(inactivationInformations)
+    
+    var sub = document.createElement('h4')
+    var subCategory = document.createTextNode('Descrição')
+    sub.appendChild(subCategory)
+    inactivationInformations.appendChild(sub)
+    var subContent = document.createElement('p')
+    var subText = document.createTextNode(data.books[i].status.description)
+    subContent.appendChild(subText)
+    inactivationInformations.appendChild(subContent)
+    modal.appendChild(inactivationInformations)
+}
+
+function closeModalInactive(){
+    divModalInactive.classList.remove('modalInactive')
+    divModalInactive.classList.add('no-modalInactive')
+    if(saveChange==true){
+        saveNewData()
+        saveChange = false;
+    }
+}
+
+function closeModalDelete(){
+    divModalDelete.classList.remove('modalDelete')
+    divModalDelete.classList.add('no-modalDelete')
+}
+
+function activeBook(i){
+    saveChange=true;
+    data.books[i].status.isActive = true;
+    data.books[i].status.description = " ";
+    divModalInactive.classList.remove('modalInactive')
+    divModalInactive.classList.add('no-modalInactive')
+    openModal(i)
+}
+
 function historicBook(index) {
 
 }

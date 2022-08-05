@@ -1,9 +1,8 @@
-
-.no-modalReturn{
+.no-modalInactive{
     display: none;
 }
 
-.modalReturn {
+.modalInactive {
     display: block;
     position: fixed;
     top: 0px;
@@ -19,15 +18,15 @@
     transition: opacity 400ms ease-in;
 }
 
-.modalReturn:target {
+.modalInactive:target {
     opacity: 1;
 }
 
-.modalReturnBook{
+.modalInactiveBook{
     height: max-content;
 }
 
-.scrollModalReturn {
+.scrollModalInactive {
     border: 1px solid #707070;
     margin: 55px auto;
     background-color: white;
@@ -36,51 +35,64 @@
     overflow-y: scroll;
 }
 
-.scrollModalReturn h2{
+.scrollModalInactive h2{
     font-size: 20px;
     margin-left: 40px;
 }
 
-.rentInformations {
+.inactivationInformations {
     margin: 16px 40px 40px 40px;
-    display: flex;
-    justify-content: space-between;
     background-color: #F4F4F4;
     width: 736px;
-    height: 82px;
-    padding: 16px;
+    height: max-content;
+    padding: 16px 16px 20px 16px;
     box-sizing: border-box;
 }
 
-.rentInformations h4{
+.inactivationInformations h4{
     margin-top: 0;
 }
 
-
-.btnReturn {
-    grid-column: 1/2;
-    grid-row: 3/4;
-    background-color: #F4F4F4;
-    border: 1px solid #ADB5BD;
-    border-radius: 5px;
-    color: #000000;
-    font-weight: 700;
+.btnActive {
+    width: 101px;
     height: 53px;
-    width: 272px;
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background-color: #FFFFFF;
+    border: 1px solid #49D749;
+    border-radius: 5px;
+    color: #49D749;
+    font-weight: 700;
+    display: block;
+    margin: auto;
     cursor: pointer;
 }
 
-.btnReturn::before {
+
+.btnRentInactive {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-color: #ffc4017d;
+    border: 1px solid #ADB5BD;
+    border-radius: 5px;
+    color: #000000a3;
+    font-weight: 700;
+    height: 53px;
+    width: 272px;
+}
+
+.btnRentInactive::before {
     content: url(../imgAdd/auto_stories_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
     width: 21px;
     position: relative;
     left: -12px;
+    filter: blur(1.2px);
 }
 
 @media screen and (max-width:900px) {
 
     .btnClose,
-    .btnReturn {
+    .btnRentInactive {
         width: 100%;
     }
 

@@ -96,6 +96,7 @@
     font-weight: 700;
     height: 53px;
     width: 272px;
+    cursor: pointer;
 }
 
 .btnRent::before {
@@ -117,10 +118,11 @@
     font-weight: 700;
     display: block;
     margin-left: 36%;
+    cursor: pointer;
 }
 
 .btnDelete {
-    width: 90px;
+    width: 101px;
     height: 53px;
     grid-column: 3/4;
     grid-row: 3/4;
@@ -131,10 +133,11 @@
     font-weight: 700;
     display: block;
     margin: auto;
+    cursor: pointer;
 }
 
 .btnHistoric {
-    width: 90px;
+    width: 113px;
     height: 53px;
     grid-column: 4/5;
     grid-row: 3/4;
@@ -144,6 +147,7 @@
     color: #000000;
     font-weight: 700;
     display: block;
+    cursor: pointer;
 }
 
 @media screen and (max-width:900px) {
@@ -170,14 +174,13 @@
     }
 
     .btnEdit,
-    .btnDelete,
     .btnHistoric {
         display: inline-block;
-        margin: 20px;
+        margin: 15px;
     }
-
-    .btnEdit {
-        margin-left: 12%;
+    
+    .btnDelete{
+        margin: auto;
     }
 
 }
