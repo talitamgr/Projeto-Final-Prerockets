@@ -90,8 +90,6 @@ header {
 
 input[type=file] {
     display: none;
-    width: 172px;
-    height: 206px;
 }
 
 .imgBook {
@@ -99,14 +97,21 @@ input[type=file] {
     height: 206px;
     border: 2px dashed #FFC501;
     color: #FFC501;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #coverLabel {
     font-size: 20px;
     font-weight: 600;
+    width: 172px;
+    height: 206px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#coverLabel img{
+    display: block;
+    margin-right: 8px;
 }
 
 .basicInformations1 {

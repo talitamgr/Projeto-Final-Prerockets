@@ -28,6 +28,7 @@ function showCover() {
             img.style.width="172px";
             img.style.height="206px";
             img.style.position= 'absolute';
+            img.style.pointerEvents="none";
             fileDisplayArea.appendChild(img);
         }
 
@@ -90,8 +91,10 @@ function saveData(){
         }
     }
     saveFile(file)
-      
-    fileDisplayArea.removeChild(img)
+    debugger
+    while(fileDisplayArea.lastChild.nodeName=='IMG'){
+        fileDisplayArea.removeChild(fileDisplayArea.lastChild)
+    }
     tittleBook.value= '';
     nameAuthor.value="";
     genreSelect.value="";
