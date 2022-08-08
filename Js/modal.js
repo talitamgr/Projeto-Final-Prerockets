@@ -292,7 +292,7 @@ function openModalInactive(i){
     modal.appendChild(inactivationInformations)
     
     var sub = document.createElement('h4')
-    var subCategory = document.createTextNode('Descrição')
+    var subCategory = document.createTextNode('Motivo')
     sub.appendChild(subCategory)
     inactivationInformations.appendChild(sub)
     var subContent = document.createElement('p')
