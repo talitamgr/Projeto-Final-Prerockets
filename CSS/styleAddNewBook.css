@@ -97,6 +97,7 @@ input[type=file] {
     height: 206px;
     border: 2px dashed #FFC501;
     color: #FFC501;
+    box-sizing: border-box;
 }
 
 #coverLabel {
@@ -159,6 +160,8 @@ input[type=file] {
 .buttons {
     margin-top: 5%;
     margin-left: 61%;
+    width: max-content;
+    box-sizing: border-box;
 }
 
 .button {
@@ -187,12 +190,20 @@ input[type=file] {
     .imgBook,
     .basicInformations1,
     .basicInformations2 {
-        margin-top: 2%;
+        margin-top: 5%;
     }
 
     .menu {
         height: max-content;
     }
+}
+@media screen and (max-width:980px) {
+    .buttons {
+        display: flex;
+        justify-content: right;
+        transform: translateX(-55%);
+    }
+
 }
 
 .material-textfield {
