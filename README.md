@@ -30,3 +30,5 @@ Essa abordagem foi escolhida para melhorar a experiência do usuário.
  Para efetuar a busca de livros na biblioteca, é possível escrever uma letra, uma palavra ou números. A busca sem filtros, retorna todos os livros que contém o item da busca. A busca com filtro, vai retornar os livros com o item da busca no filtro selecionado.
 
  Por exemplo, se for digitado o número “20”, todos os livros que contém “20” na data de entrada ou gênero ou autor ou no título, irão aparecer como resultado. Se for inserido um filtro de data, só aparecerão os livros com “20” na data. 
+ 
+ Tanto no modal do Histórico de Empréstimos, quanto na página, os filtros funcionam em conjunto, não sendo necessário preencher todos os filtros. Por exemplo, se for inserida uma busca no filtro da primeira coluna e outra no filtro da segunda coluna, os filtros são somados, mostrando os resultados que satisfazem as duas buscas. Os resultados são mostrados assim que os caracteres são digitados nos filtros.
