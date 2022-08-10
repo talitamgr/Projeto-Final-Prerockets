@@ -97,4 +97,10 @@
         width: 100%;
     }
 
+    .scrollModalInactive {
+        overflow-y: scroll;
+        width: 80%;
+        max-width: 816px;
+    }
+
 }
