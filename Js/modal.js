@@ -6,6 +6,7 @@ var divScrollModalReturn = document.querySelector('.scrollModalReturn')
 var divModalDelete = document.querySelector('.no-modalDelete')
 var divModalInactive = document.querySelector('.no-modalInactive')
 var divScrollModalInactive = document.querySelector('.scrollModalInactive')
+var divModalHistoric = document.querySelector('.no-modalHistoric')
 var saveChange;
 
 function checkBook(index) {
@@ -25,7 +26,7 @@ function checkBook(index) {
                 openModal(index)
             }
         }
-    }else{
+    } else {
         openModalInactive(index)
     }
 }
@@ -39,7 +40,7 @@ function formatDate(date) {
 function closeModal() {
     divModal.classList.remove('modal')
     divModal.classList.add('no-modal')
-    if(saveChange==true){
+    if (saveChange == true) {
         saveNewData()
         saveChange == false;
     }
@@ -90,7 +91,7 @@ function buttonConstructor(btnClass, btnName, btnFunction, index, modal) {
     btn.classList.add(btnClass)
     var btnName = document.createTextNode(btnName)
     btn.appendChild(btnName)
-    if(btnFunction){
+    if (btnFunction) {
         btn.onclick = () => btnFunction(index)
     }
     modal.appendChild(btn)
@@ -211,7 +212,7 @@ function modalRentConstructor(subtitle, item, index, modal) {
 function closeModalReturn() {
     divModalReturn.classList.remove('modalReturn')
     divModalReturn.classList.add('no-modalReturn')
-    if(saveChange==true){
+    if (saveChange == true) {
         saveNewData()
         saveChange = false;
     }
@@ -229,7 +230,7 @@ function returnBook(index) {
 
 function editBook(index) {
     localStorage.setItem('index', index);
-    window.location.href ='../Html/editBook.html'
+    window.location.href = '../Html/editBook.html'
 }
 
 function deleteBook(index) {
@@ -243,15 +244,15 @@ function deleteBook(index) {
     btnSaveInactivation.onclick = () => inactivateBook(index)
 }
 
-function inactivateBook(i){
-    saveChange=true;
+function inactivateBook(i) {
+    saveChange = true;
     var descriptionDelete = document.getElementById('descriptionDelete')
     data.books[i].status.isActive = false;
     data.books[i].status.description = descriptionDelete.value;
     openModalInactive(i)
 }
 
-function openModalInactive(i){
+function openModalInactive(i) {
     divModalDelete.classList.remove('modalDelete')
     divModalDelete.classList.add('no-modalDelete')
     divModalInactive.classList.remove('no-modalInactive')
@@ -276,7 +277,7 @@ function openModalInactive(i){
     modalConstructor('Autor', 'author', i, divInformations)
     modalConstructor('Gênero', 'genre', i, divInformations)
     modalConstructor('Data de entrada', 'systemEntryDate', i, divInformations)
-    buttonConstructor("btnRentInactive", "Emprestar", null , i, modalBook)
+    buttonConstructor("btnRentInactive", "Emprestar", null, i, modalBook)
     buttonConstructor("btnEdit", "Editar", editBook, i, modalBook)
     buttonConstructor("btnActive", "Ativar", activeBook, i, modalBook)
     buttonConstructor("btnHistoric", "Histórico", historicBook, i, modalBook)
@@ -290,7 +291,7 @@ function openModalInactive(i){
     datas.appendChild(datasContent)
     modal.appendChild(datas)
     modal.appendChild(inactivationInformations)
-    
+
     var sub = document.createElement('h4')
     var subCategory = document.createTextNode('Motivo')
     sub.appendChild(subCategory)
@@ -302,22 +303,22 @@ function openModalInactive(i){
     modal.appendChild(inactivationInformations)
 }
 
-function closeModalInactive(){
+function closeModalInactive() {
     divModalInactive.classList.remove('modalInactive')
     divModalInactive.classList.add('no-modalInactive')
-    if(saveChange==true){
+    if (saveChange == true) {
         saveNewData()
         saveChange = false;
     }
 }
 
-function closeModalDelete(){
+function closeModalDelete() {
     divModalDelete.classList.remove('modalDelete')
     divModalDelete.classList.add('no-modalDelete')
 }
 
-function activeBook(i){
-    saveChange=true;
+function activeBook(i) {
+    saveChange = true;
     data.books[i].status.isActive = true;
     data.books[i].status.description = " ";
     divModalInactive.classList.remove('modalInactive')
@@ -325,16 +326,147 @@ function activeBook(i){
     openModal(i)
 }
 
-function historicBook(index) {
+var table = document.querySelector('.tableHistoric')
+var scrollModalHistoric = document.querySelector('.scrollModalHistoric')
 
+function historicBook(index) {
+    divModalHistoric.classList.remove('no-modalHistoric')
+    divModalHistoric.classList.add('modalHistoric')
+    divModalReturn.classList.remove('modalReturn')
+    divModalReturn.classList.add('no-modalReturn')
+    divModalInactive.classList.remove('modalInactive')
+    divModalInactive.classList.add('no-modalInactive')
+    divModal.classList.remove('modal')
+    divModal.classList.add('no-modal')
+
+    buttonConstructor("btnCloseHistoric", "X", closeModalHistoric, index, scrollModalHistoric)
+    table.textContent = ' '
+    var lineTable = document.createElement('tr')
+    lineTable.classList.add('titleTable')
+    table.appendChild(lineTable)
+    firstBarTableConstructor('Aluno', lineTable)
+    firstBarTableConstructor('Turma', lineTable)
+    firstBarTableConstructor('Data da Retirada', lineTable)
+    firstBarTableConstructor("Data da Entrega", lineTable)
+    var filter = document.createElement('tr')
+    var dataHistoric = data.books[index].rentHistory
+    filterConstructor(filter, dataHistoric, table, "studentName")
+    filterConstructor(filter, dataHistoric, table, "class")
+    filterConstructor(filter, dataHistoric, table, "withdrawalDate")
+    filterConstructor(filter, dataHistoric, table, "deliveryDate")
+    table.appendChild(filter)
+
+    for (var i = 0; i < dataHistoric.length; i++) {
+        tableConstructor(dataHistoric[i], table)
+    }
 }
 
-function saveNewData(){
+function firstBarTableConstructor(nameCol, lineTable) {
+    var name = document.createElement('th')
+    var nameContent = document.createTextNode(nameCol)
+    name.appendChild(nameContent)
+    lineTable.appendChild(name)
+}
+
+function filterConstructor(filter, dataHistoric, table, category) {
+    var colFilter = document.createElement('th')
+    var divFilter = document.createElement('div')
+    filter.appendChild(colFilter)
+    var imgFilter = document.createElement('img')
+    imgFilter.src = ('../ImgAdd/Caminho 147.svg')
+    imgFilter.classList.add('imgFilter')
+    var entryFilter = document.createElement('input')
+    entryFilter.type = 'text'
+    entryFilter.classList.add('textFilter')
+    entryFilter.classList.add(category)
+    entryFilter.addEventListener('keyup', function () {
+        applyFilters(dataHistoric, table);
+    });
+    divFilter.appendChild(imgFilter)
+    divFilter.appendChild(entryFilter)
+    colFilter.appendChild(divFilter)
+}
+
+function tableConstructor(item, modal) {
+    var lineTable = document.createElement('tr')
+    lineTable.classList.add('dataStudent')
+    var name = document.createElement('th')
+    var nameContent = document.createTextNode(item.studentName)
+    name.appendChild(nameContent)
+    lineTable.appendChild(name)
+    var classStudent = document.createElement('th')
+    var classContent = document.createTextNode(item.class)
+    classStudent.appendChild(classContent)
+    lineTable.appendChild(classStudent)
+    var withdrawalDate = document.createElement('th')
+    var withdrawalDateContent = document.createTextNode(item.withdrawalDate)
+    withdrawalDate.appendChild(withdrawalDateContent)
+    lineTable.appendChild(withdrawalDate)
+    var deliveryDate = document.createElement('th')
+    var deliveryDateContent = document.createTextNode(item.deliveryDate)
+    deliveryDate.appendChild(deliveryDateContent)
+    lineTable.appendChild(deliveryDate)
+    modal.appendChild(lineTable)
+}
+
+function applyFilters(dataHistoric, table) {
+
+    var filteredList = applyFilter(dataHistoric, "studentName")
+    filteredList = applyFilter(filteredList, "class")
+    filteredList = applyFilter(filteredList, "withdrawalDate")
+    filteredList = applyFilter(filteredList, "deliveryDate")
+
+    displayTable(filteredList, table)
+}
+
+function applyFilter(dataHistoric, category) {
+    var entryFilter = document.querySelector("." + category)
+    var filteredList = []
+    var entrySearch = new RegExp(entryFilter.value, 'i')
+   
+    for (var i = 0; i < dataHistoric.length; i++) {
+        var compareEntry = entrySearch.test(dataHistoric[i][category]);
+
+        if (compareEntry) {
+            filteredList.push(dataHistoric[i])
+        }
+    }
+
+    return filteredList
+}
+
+function displayTable(dataToShow, table) {
+    while (table.lastChild.className == 'dataStudent') {
+        table.removeChild(table.lastChild)
+    }
+    if (scrollModalHistoric.lastChild.nodeName == "DIV") {
+        scrollModalHistoric.removeChild(scrollModalHistoric.lastChild)
+    }
+
+    if (!dataToShow.length) {
+        var feedback = document.createElement('div')
+        var feedbackContent = document.createTextNode("Nenhum resultado.")
+        feedback.appendChild(feedbackContent)
+        scrollModalHistoric.appendChild(feedback)
+    } else {
+        for (var i = 0; i < dataToShow.length; i++) {
+            tableConstructor(dataToShow[i], table)
+        }
+    }
+}
+
+function closeModalHistoric(i) {
+    divModalHistoric.classList.remove('modalHistoric')
+    divModalHistoric.classList.add('no-modalHistoric')
+    checkBook(i)
+}
+
+function saveNewData() {
     var file = new Blob([JSON.stringify({ data })], { type: "text/plain" });
 
-        const saveFile = async blob => {
-            try {
-                const handle = await window.showSaveFilePicker({
+    const saveFile = async blob => {
+        try {
+            const handle = await window.showSaveFilePicker({
                 suggestedName: 'data.json',
                 types: [
                     {
