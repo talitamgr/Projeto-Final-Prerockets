@@ -1,4 +1,4 @@
-.no-modalInactive{
+.no-modalInactive {
     display: none;
 }
 
@@ -22,7 +22,7 @@
     opacity: 1;
 }
 
-.modalInactiveBook{
+.modalInactiveBook {
     height: max-content;
 }
 
@@ -35,7 +35,7 @@
     overflow-y: scroll;
 }
 
-.scrollModalInactive h2{
+.scrollModalInactive h2 {
     font-size: 20px;
     margin-left: 40px;
 }
@@ -49,7 +49,7 @@
     box-sizing: border-box;
 }
 
-.inactivationInformations h4{
+.inactivationInformations h4 {
     margin-top: 0;
 }
 

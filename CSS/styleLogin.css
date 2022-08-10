@@ -1,13 +1,14 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('../imgLogin/Retângulo\ 310.svg'), 
-                      url("../imgLogin/emil-widlund-xrbbXIXAWY0-unsplash@2x.png");
+    background-image: url('../imgLogin/Retângulo\ 310.svg'),
+        url("../imgLogin/emil-widlund-xrbbXIXAWY0-unsplash@2x.png");
     background-position: center, center bottom;
     background-size: cover, cover;
     height: 100vh;
     box-sizing: border-box;
-} 
-#login{
+}
+
+#login {
     width: 433px;
     height: 446px;
     background-color: white;
@@ -19,9 +20,10 @@ body{
     box-sizing: border-box;
     position: relative;
     top: 50%;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
 }
-#logoLibrary{
+
+#logoLibrary {
     display: block;
     margin: auto;
     width: 120px;
@@ -29,7 +31,8 @@ body{
     margin-top: 1em;
     margin-bottom: 3.5em;
 }
-#loginEmail{
+
+#loginEmail {
     display: block;
     width: 353px;
     height: 51px;
@@ -41,7 +44,8 @@ body{
     border: 0;
     outline: none;
 }
-#imgEmail{
+
+#imgEmail {
     display: block;
     float: right;
     position: relative;
@@ -49,7 +53,8 @@ body{
     top: -2.35em;
     margin: .3em 0;
 }
-#loginPassword{
+
+#loginPassword {
     display: inline-block;
     clear: both;
     width: 353px;
@@ -63,7 +68,8 @@ body{
     outline: none;
     margin-bottom: 0;
 }
-#imgPassword{
+
+#imgPassword {
     display: block;
     float: right;
     position: relative;
@@ -71,7 +77,8 @@ body{
     top: -2.35em;
     margin: .3em 0;
 }
-#forgetPassword{
+
+#forgetPassword {
     display: block;
     color: #000000;
     text-align: left;
@@ -80,7 +87,8 @@ body{
     margin-top: 1em;
     margin-bottom: 2em;
 }
-#signInBtn{
+
+#signInBtn {
     display: block;
     width: 100%;
     font-size: 16px;

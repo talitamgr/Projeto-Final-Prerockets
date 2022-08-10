@@ -81,7 +81,7 @@ header {
     color: #00000080;
 }
 
-.tableHistoric{
+.tableHistoric {
     width: 95%;
     height: max-content;
     border-collapse: collapse;
@@ -89,7 +89,7 @@ header {
     margin: 40px auto 34px;
 }
 
-.tableHistoric th{
+.tableHistoric th {
     height: 52px;
     padding: 10px 42px 10px;
     box-sizing: border-box;
@@ -98,12 +98,12 @@ header {
     font-weight: normal;
 }
 
-.tableHistoric tr:first-child th{
+.tableHistoric tr:first-child th {
     border-bottom: 0;
     font-weight: bold;
 }
 
-.titleTable{
+.titleTable {
     background-color: #FFC501;
     height: 41px;
     padding: 10px 42px;
@@ -111,36 +111,38 @@ header {
     border-radius: 1px;
 }
 
-.tableHistoric tr:nth-child(2) th div{
+.tableHistoric tr:nth-child(2) th div {
     width: 105px;
     border-bottom: 1px solid black;
     box-sizing: border-box;
     margin: 0;
 }
 
-.textFilter{
+.textFilter {
     border: none;
     width: 80%;
     outline: none;
     height: 21px;
     padding: 0 0 0 3px;
 }
-.textFilter:focus{
+
+.textFilter:focus {
     outline: none;
     border: none;
 }
 
 @media screen and (max-width:1040px) {
-    .tableHistoric th{
-        height: auto;  
+    .tableHistoric th {
+        height: auto;
     }
-    .tableHistoric tr:nth-child(2) th div{
+
+    .tableHistoric tr:nth-child(2) th div {
         width: auto;
     }
 }
 
 @media screen and (max-width:834px) {
-    .menu{
+    .menu {
         /* width: 750px; */
         overflow-x: scroll;
     }

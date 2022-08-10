@@ -423,7 +423,7 @@ function applyFilter(dataHistoric, category) {
     var entryFilter = document.querySelector("." + category)
     var filteredList = []
     var entrySearch = new RegExp(entryFilter.value, 'i')
-   
+
     for (var i = 0; i < dataHistoric.length; i++) {
         var compareEntry = entrySearch.test(dataHistoric[i][category]);
 

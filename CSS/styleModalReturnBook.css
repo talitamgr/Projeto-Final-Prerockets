@@ -1,5 +1,4 @@
-
-.no-modalReturn{
+.no-modalReturn {
     display: none;
 }
 
@@ -23,7 +22,7 @@
     opacity: 1;
 }
 
-.modalReturnBook{
+.modalReturnBook {
     height: max-content;
 }
 
@@ -36,7 +35,7 @@
     overflow-y: scroll;
 }
 
-.scrollModalReturn h2{
+.scrollModalReturn h2 {
     font-size: 20px;
     margin-left: 40px;
 }
@@ -52,10 +51,9 @@
     box-sizing: border-box;
 }
 
-.rentInformations h4{
+.rentInformations h4 {
     margin-top: 0;
 }
-
 
 .btnReturn {
     grid-column: 1/2;

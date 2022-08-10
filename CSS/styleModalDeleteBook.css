@@ -1,6 +1,7 @@
-.no-modalDelete{
+.no-modalDelete {
     display: none;
 }
+
 .modalDelete {
     display: block;
     position: fixed;
@@ -17,7 +18,7 @@
     transition: opacity 400ms ease-in;
 }
 
-.modalDeleteElements{
+.modalDeleteElements {
     width: 804px;
     height: 336px;
     color: #3E4756;
@@ -28,30 +29,37 @@
     margin: 55px auto;
     background-color: white;
 }
-.modalDeleteElements input{
+
+.modalDeleteElements input {
     width: 724px;
     height: 129px;
     margin: 16px;
     display: block;
 }
-.modalDeleteElements h2{
+
+.modalDeleteElements h2 {
     margin: 0 16px 24px 16px;
 }
-.modalDeleteElements .btnClose{
+
+.modalDeleteElements .btnClose {
     display: block;
     width: 100%;
 }
-.modalDeleteElements .material-textfield label{
-   margin-left: 20px;
-   transform: translateY(-9px);
+
+.modalDeleteElements .material-textfield label {
+    margin-left: 20px;
+    transform: translateY(-9px);
 }
+
 .modalDeleteElements input[type=text]:not(:placeholder-shown)+label {
     top: 0;
     transform: translateY(-52%) scale(.9);
 }
-#inactivate{
+
+#inactivate {
     margin-left: 85%;
 }
+
 @media screen and (max-width:900px) {
     .modalDeleteElements {
         width: auto;
@@ -59,11 +67,13 @@
         height: max-content;
         margin: 55px 5%;
     }
-    #descriptionDelete{
+
+    #descriptionDelete {
         width: 95%;
         max-width: 724px;
     }
-    #inactivate{
+
+    #inactivate {
         margin-left: 75%;
     }
 }

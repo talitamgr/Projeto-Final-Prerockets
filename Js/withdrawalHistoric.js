@@ -16,7 +16,7 @@ fetch('../data.json').then(response => {
     }
 })
 
-function showTitleTable(){
+function showTitleTable() {
     var lineTable = document.createElement('tr')
     lineTable.classList.add('titleTable')
     table.appendChild(lineTable)
@@ -27,9 +27,9 @@ function showTitleTable(){
     firstBarTableConstructor("Data da Entrega", lineTable)
 }
 
-function showFilterBar(books){
+function showFilterBar(books) {
     var filter = document.createElement('tr')
-    for(var i=0; i<books.length; i++){
+    for (var i = 0; i < books.length; i++) {
         dataHistoric = dataHistoric.concat(books[i].rentHistory.map(rent => {
             var completeRent = {
                 book: books[i].tittle,
@@ -48,7 +48,7 @@ function showFilterBar(books){
 
 
 function historicBook(books, index) {
-    dataHistoric = books[index].rentHistory    
+    dataHistoric = books[index].rentHistory
 
     for (var i = 0; i < dataHistoric.length; i++) {
         tableConstructor(dataHistoric[i], table, books[index].tittle)
@@ -62,7 +62,7 @@ function firstBarTableConstructor(nameCol, lineTable) {
     lineTable.appendChild(name)
 }
 
-function filterConstructor(filter, dataHistoric, books, table, category) {
+function filterConstructor(filter, dataHistoric, table, category) {
     var colFilter = document.createElement('th')
     var divFilter = document.createElement('div')
     filter.appendChild(colFilter)
@@ -74,9 +74,9 @@ function filterConstructor(filter, dataHistoric, books, table, category) {
     entryFilter.classList.add('textFilter')
     entryFilter.classList.add(category)
     entryFilter.addEventListener('keyup', function () {
-        
+
         applyFilters(dataHistoric, table);
-    
+
     });
     divFilter.appendChild(imgFilter)
     divFilter.appendChild(entryFilter)
@@ -121,37 +121,37 @@ function applyFilters(dataHistoric, table) {
 }
 
 function applyFilter(dataHistoric, category) {
-    var entryFilter = document.querySelector("."+category)
+    var entryFilter = document.querySelector("." + category)
     var filteredList = []
     var entrySearch = new RegExp(entryFilter.value, 'i')
 
     for (var i = 0; i < dataHistoric.length; i++) {
         var compareEntry = entrySearch.test(dataHistoric[i][category]);
-        
+
         if (compareEntry) {
             filteredList.push(dataHistoric[i])
         }
     }
-    
+
     return filteredList
 }
 
-function displayTable(dataToShow, table){
+function displayTable(dataToShow, table) {
     while (table.lastChild.className == 'dataStudent') {
         table.removeChild(table.lastChild)
     }
-    if(divWithdrawalHistoric.lastChild.nodeName == "DIV"){
+    if (divWithdrawalHistoric.lastChild.nodeName == "DIV") {
         divWithdrawalHistoric.removeChild(divWithdrawalHistoric.lastChild)
-        }
+    }
 
     if (!dataToShow.length) {
         var feedback = document.createElement('div')
         var feedbackContent = document.createTextNode("Nenhum resultado.")
         feedback.appendChild(feedbackContent)
         divWithdrawalHistoric.appendChild(feedback)
-    }else{
+    } else {
         for (var i = 0; i < dataToShow.length; i++) {
-                tableConstructor(dataToShow[i], table, dataToShow[i].book)
+            tableConstructor(dataToShow[i], table, dataToShow[i].book)
         }
     }
 }

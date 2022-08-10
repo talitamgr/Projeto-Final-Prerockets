@@ -111,7 +111,7 @@ input[type=file] {
     justify-content: center;
 }
 
-#coverLabel img{
+#coverLabel img {
     display: block;
     margin-right: 8px;
 }
@@ -197,6 +197,7 @@ input[type=file] {
         height: max-content;
     }
 }
+
 @media screen and (max-width:980px) {
     .buttons {
         display: flex;
