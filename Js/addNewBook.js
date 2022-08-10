@@ -91,7 +91,7 @@ function saveData(){
         }
     }
     saveFile(file)
-    debugger
+    
     while(fileDisplayArea.lastChild.nodeName=='IMG'){
         fileDisplayArea.removeChild(fileDisplayArea.lastChild)
     }
