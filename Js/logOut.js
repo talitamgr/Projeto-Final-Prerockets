@@ -1,12 +1,10 @@
 var menu = new Menu({
     container: '.headerNav',
-    toggleBtn: '.headerBtn',
-    widthEnabled: 4000
+    toggleBtn: '.btnHamburg',
 })
 function Menu(config) {
     this.nav = (typeof config.container === 'string') ? document.querySelector(config.container) : config.container
     this.btn = (typeof config.toggleBtn === 'string') ? document.querySelector(config.toggleBtn) : config.toggleBtn
-    this.maxWidth = config.widthEnabled || false
 
     var _openned = false;
     var _this = this;
@@ -15,18 +13,7 @@ function Menu(config) {
     closeMenu()
     this.btn.addEventListener('click', openOrClose)
 
-    if (this.maxWidth) {
-        window.addEventListener('resize', e => {
-            if (window.innerWidth > _this.maxWidth) {
-                _this.nav.removeAttribute('style')
-                _openned = true;
-            }
-        })
-
-        if (window.innerWidth <= _this.maxWidth) {
-            closeMenu()
-        }
-    }
+   
 
     function openOrClose() {
         if (!_openned) {

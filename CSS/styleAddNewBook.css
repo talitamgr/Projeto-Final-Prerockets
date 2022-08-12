@@ -32,6 +32,10 @@ header {
     width: 24px;
 }
 
+.btnHamburg{
+    cursor: pointer;
+}
+
 .headerBtn {
     background-color: white;
     width: 24px;
@@ -148,8 +152,14 @@ input[type=file] {
 }
 
 #synopsis {
+    border: 1px solid #133052;
+    border-radius: 5px;
+    outline: none;
+    display: block;
     width: 350px;
     height: 129px;
+    resize: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 #date {
@@ -171,6 +181,7 @@ input[type=file] {
     font-size: 16px;
     font-weight: 600;
     margin-left: 1.5em;
+    cursor: pointer;
 }
 
 .button-white {
@@ -212,7 +223,8 @@ input[type=file] {
 }
 
 input+label,
-select+label {
+select+label,
+textarea + label {
     position: absolute;
     font-size: 1rem;
     left: 0;
@@ -227,12 +239,17 @@ select+label {
     pointer-events: none;
 }
 
+textarea+label{  
+    top: 20%;
+}
+
 select+label {
     width: 50%;
 }
 
 input,
-select {
+select,
+textarea {
     font-size: 1rem;
     outline: none;
     border: 1px solid #133052;
@@ -244,7 +261,8 @@ select {
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
     border: 2px solid #3E4756;
 }
 
@@ -253,13 +271,15 @@ select:focus+label {
 }
 
 input:focus+label,
-select:focus+label {
+select:focus+label,
+textarea:focus + label {
     color: #3E4756;
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
 
-input[type=text]:not(:placeholder-shown)+label {
+input[type=text]:not(:placeholder-shown)+label,
+textarea:not(:placeholder-shown)+label {
     top: 0;
     transform: translateY(-50%) scale(.9);
 }

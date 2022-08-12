@@ -32,6 +32,10 @@ header {
     width: 24px;
 }
 
+.btnHamburg{
+    cursor: pointer;
+}
+
 .headerBtn {
     background-color: white;
     width: 24px;

@@ -4,6 +4,7 @@ var genreSelect = document.getElementById('select')
 var dateInput = document.getElementById('date')
 var synopsis = document.getElementById('synopsis')
 var fileDisplayArea = document.querySelector('#cover');
+var i = localStorage.getItem('index');
 
 let data;
 
@@ -16,7 +17,6 @@ fetch('../data.json').then(response => {
 })
 
 function editThisBook() {
-    var i = localStorage.getItem('index');
     var tittleBook = document.getElementById('tittle')
     var nameAuthor = document.getElementById('nameAuthor')
     var genreSelect = document.getElementById('select')
@@ -37,9 +37,6 @@ function editThisBook() {
     img.style.position = 'absolute';
     img.style.pointerEvents = "none";
     fileDisplayArea.appendChild(img);
-
-
-
 }
 
 function backToLibrary() {
@@ -84,18 +81,15 @@ function saveData() {
     if (tittleBook == " " || nameAuthor.value == '' || genreSelect.value == '' || synopsis.value == '' || dateInput.value == '') {
         alert('Preencha todos os campos')
     } else {
-        data.books.push({
+        data.books.splice(i,1,{
             'tittle': tittleBook.value,
             'author': nameAuthor.value,
             "genre": genreSelect.value,
-            "status": {
-                "isActive": true,
-                "description": ""
-            },
+            "status": data.books[i].status,
             "image": img.src,
             "systemEntryDate": date,
             "synopsis": synopsis.value,
-            "rentHistory": []
+            "rentHistory": data.books[i].rentHistory
         })
 
         var file = new Blob([JSON.stringify({ data })], { type: "text/plain" });
@@ -115,13 +109,12 @@ function saveData() {
                 const writable = await handle.createWritable()
                 await writable.write(blob)
                 await writable.close()
-
+                
                 return handle
             } catch (err) {
                 console.error(err.name, err.message)
             }
         }
         saveFile(file)
-        window.location.href = '../Html/library.html'
     }
 }

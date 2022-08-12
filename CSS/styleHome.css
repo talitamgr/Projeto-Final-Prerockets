@@ -41,6 +41,10 @@ header {
     padding: 0;
 }
 
+.btnHamburg{
+    cursor: pointer;
+}
+
 .headerNav {
     background-color: #F4F4F4;
     border-radius: 5px;

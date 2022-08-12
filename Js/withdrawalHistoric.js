@@ -38,11 +38,11 @@ function showFilterBar(books) {
             return completeRent
         }))
     }
-    filterConstructor(filter, dataHistoric, books, table, "studentName")
-    filterConstructor(filter, dataHistoric, books, table, "class")
-    filterConstructor(filter, dataHistoric, books, table, "book")
-    filterConstructor(filter, dataHistoric, books, table, "withdrawalDate")
-    filterConstructor(filter, dataHistoric, books, table, "deliveryDate")
+    filterConstructor(filter, dataHistoric, table, "studentName")
+    filterConstructor(filter, dataHistoric, table, "class")
+    filterConstructor(filter, dataHistoric, table, "book")
+    filterConstructor(filter, dataHistoric, table, "withdrawalDate")
+    filterConstructor(filter, dataHistoric, table, "deliveryDate")
     table.appendChild(filter)
 }
 
@@ -67,7 +67,7 @@ function filterConstructor(filter, dataHistoric, table, category) {
     var divFilter = document.createElement('div')
     filter.appendChild(colFilter)
     var imgFilter = document.createElement('img')
-    imgFilter.src = ('../ImgAdd/Caminho 147.svg')
+    imgFilter.src = ('../ImgAdd/Caminho147.svg')
     imgFilter.classList.add('imgFilter')
     var entryFilter = document.createElement('input')
     entryFilter.type = 'text'

@@ -323,7 +323,7 @@ function activeBook(i) {
     data.books[i].status.description = " ";
     divModalInactive.classList.remove('modalInactive')
     divModalInactive.classList.add('no-modalInactive')
-    openModal(i)
+    checkBook(i)
 }
 
 var table = document.querySelector('.tableHistoric')
@@ -373,7 +373,7 @@ function filterConstructor(filter, dataHistoric, table, category) {
     var divFilter = document.createElement('div')
     filter.appendChild(colFilter)
     var imgFilter = document.createElement('img')
-    imgFilter.src = ('../ImgAdd/Caminho 147.svg')
+    imgFilter.src = ('../ImgAdd/Caminho147.svg')
     imgFilter.classList.add('imgFilter')
     var entryFilter = document.createElement('input')
     entryFilter.type = 'text'

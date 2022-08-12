@@ -30,6 +30,12 @@ function showElements(item, index) {
     cards.appendChild(card)
 }
 
+inputSearch.addEventListener('keyup', function(e){
+    if(e.keyCode === 13){
+        searchBook();
+    }
+});  
+
 function searchBook() {
     cards.textContent = " "
     var noMatch = true;
@@ -39,7 +45,7 @@ function searchBook() {
         for (var i = 0; i < data.books.length; i++) {
             var compared = entrySearch.test(data.books[i][filterToUse]);
             if (compared) {
-                showElements(data.books[i])
+                showElements(data.books[i], i)
                 noMatch = false;
             }
         }
@@ -50,7 +56,7 @@ function searchBook() {
             var compareAuthor = entrySearch.test(data.books[i].author);
             var compareDate = entrySearch.test(data.books[i].systemEntryDate)
             if (compareTitle || compareAuthor || compareGenre || compareDate) {
-                showElements(data.books[i])
+                showElements(data.books[i], i)
                 noMatch = false;
             }
         }

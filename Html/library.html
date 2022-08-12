@@ -24,7 +24,7 @@
             <img src="../imgLogin/Logo.svg" alt="Logo Library">
         </div>
         <div>
-            <div id="user">
+            <div class="btnHamburg" id="user">
                 <img src="../imgHome/person_black_24dp (1).svg">
                 <p class="nameUser">Usuário</p>
                 <button class="headerBtn"><img src="../imgHome/Arrow.svg"></button>
@@ -64,12 +64,12 @@
 
 
     </section>
-    <div class="no-modal" id="modal">
+    <div class="no-modal" id="modal" onclick="closeModal()">
         <div class="scrollModal">
 
         </div>
     </div>
-    <div class="no-modalRent">
+    <div class="no-modalRent" onclick="closeModalRent()">
         <div class="scrollModalRent">
             <div class="modalRentElements">
                 <button class="btnClose" onclick="closeModalRent()">X</button>
