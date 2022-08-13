@@ -1,32 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <title>Library - Login</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../CSS/styleLogin.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/styleLogin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="login">
-        <img src="../assets/imgLogin/Logo.svg" id="logoLibrary" alt="Logo Library">
-        <form method="post">
-            <input type="email" id="loginEmail" required placeholder="E-mail">
-            <img src="../assets/imgLogin/Grupo 37.svg" id="imgEmail" alt="Envelope">
-            <input type="password" id="loginPassword" required placeholder="Senha">
-            <img src="../assets/imgLogin/Grupo 36.svg" id="imgPassword" alt="Cadeado">
-            <a href="#" id="forgetPassword">Esqueci minha senha</a>
-        </form>
-        <a id="signInBtn" onclick="authentication()">Entrar</a>
+      <img
+        src="../assets/imgLogin/Logo.svg"
+        id="logoLibrary"
+        alt="Logo Library"
+      />
+      <form method="post">
+        <input type="email" id="loginEmail" required placeholder="E-mail" />
+        <img
+          src="../assets/imgLogin/Grupo 37.svg"
+          id="imgEmail"
+          alt="Envelope"
+        />
+        <input
+          type="password"
+          id="loginPassword"
+          required
+          placeholder="Senha"
+        />
+        <img
+          src="../assets/imgLogin/Grupo 36.svg"
+          id="imgPassword"
+          alt="Cadeado"
+        />
+        <a href="#" id="forgetPassword">Esqueci minha senha</a>
+      </form>
+      <a id="signInBtn" onclick="authentication()">Entrar</a>
     </div>
     <script src="../Js/login.js"></script>
     <script src="../Js/readingJson.js"></script>
-
-</body>
-
+  </body>
 </html>

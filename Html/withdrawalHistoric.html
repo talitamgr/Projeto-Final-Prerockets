@@ -1,43 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Library - Histórico de Empréstimos</title>
-        <meta charset="utf-8"> 
-        <link rel="stylesheet" href="../CSS/styleWithdrawalHistoric.css">
-        <link rel="stylesheet" href="../CSS/styleHeader.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div id="logoLibrary">
-                <img src="../assets/imgLogin/Logo.svg" alt="Logo Library">
-            </div>
-            <div>
-                <div id="user" class="btnHamburg">
-                    <img src="../assets/imgHome/person_black_24dp (1).svg">
-                    <p class="nameUser">Usuário</p>
-                    <button class="headerBtn"><img src="../assets/imgHome/Arrow.svg"></button>
-                </div>
-                <nav class="headerNav" style="display: none">
-                <a href="./login.html" class="btnLogOut">Sair</a>
-                </nav>
-            </div>
-        </header>
-        <section class="menu">
-            <div class="menuTitle">
-                <a href="../Html/home.html"><img src="../assets/imgAdd/chevron_left_FILL0_wght400_GRAD0_opsz48.svg">
-                <h2>Home </a><strong>/ Histórico de Empréstimos</strong></h2>
-            </div>
-            <div class="withdrawalHistoric">
-                <table class="tableHistoric">
-                    
-                </table>                           
-            </div>
-        </section>
-        <script src="../Js/logOut.js"></script>
-        <script src="../Js/withdrawalHistoric.js"></script>
-        
-    </body>
+  <head>
+    <title>Library - Histórico de Empréstimos</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/styleWithdrawalHistoric.css" />
+    <link rel="stylesheet" href="../CSS/styleHeader.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="logoLibrary">
+        <img src="../assets/imgLogin/Logo.svg" alt="Logo Library" />
+      </div>
+      <div>
+        <div id="user" class="btnHamburg">
+          <img src="../assets/imgHome/person_black_24dp (1).svg" />
+          <p class="nameUser">Usuário</p>
+          <button class="headerBtn">
+            <img src="../assets/imgHome/Arrow.svg" />
+          </button>
+        </div>
+        <nav class="headerNav" style="display: none">
+          <a href="./login.html" class="btnLogOut">Sair</a>
+        </nav>
+      </div>
+    </header>
+    <section class="menu">
+      <div class="menuTitle">
+        <h2>
+          <a href="../Html/home.html">
+            <img
+              src="../assets/imgAdd/chevron_left_FILL0_wght400_GRAD0_opsz48.svg"
+            />
+            Home
+          </a>
+          <strong>/ Histórico de Empréstimos</strong>
+        </h2>
+      </div>
+      <div class="withdrawalHistoric">
+        <table class="tableHistoric"></table>
+      </div>
+    </section>
+    <script src="../Js/logOut.js"></script>
+    <script src="../Js/withdrawalHistoric.js"></script>
+  </body>
 </html>

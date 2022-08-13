@@ -1,81 +1,81 @@
 .no-modalDelete {
-    display: none;
+  display: none;
 }
 
 .modalDelete {
-    display: block;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    bottom: 0;
-    left: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 99;
-    opacity: 1;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
+  display: block;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  opacity: 1;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 
 .modalDeleteElements {
-    width: 804px;
-    height: 336px;
-    color: #3E4756;
-    border: 1px solid #707070;
-    height: 353px;
-    box-sizing: border-box;
-    padding: 24px;
-    margin: 55px auto;
-    background-color: white;
+  width: 804px;
+  height: 336px;
+  color: #3e4756;
+  border: 1px solid #707070;
+  height: 353px;
+  box-sizing: border-box;
+  padding: 24px;
+  margin: 55px auto;
+  background-color: white;
 }
 
 .modalDeleteElements textarea {
-    width: 724px;
-    height: 129px;
-    margin: 16px;
-    display: block;
-    resize: none;
-    font-family: 'Roboto', sans-serif; 
+  width: 724px;
+  height: 129px;
+  margin: 16px;
+  display: block;
+  resize: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .modalDeleteElements h2 {
-    margin: 0 16px 24px 16px;
+  margin: 0 16px 24px 16px;
 }
 
 .modalDeleteElements .btnClose {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .modalDeleteElements .material-textfield label {
-    margin-left: 20px;
-    transform: translateY(-9px);
+  margin-left: 20px;
+  transform: translateY(-9px);
 }
 
-.modalDeleteElements textarea:not(:placeholder-shown)+ label {
-    top: 0;
-    transform: translateY(-52%) scale(.9);
+.modalDeleteElements textarea:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-52%) scale(0.9);
 }
 
 #inactivate {
-    margin-left: 85%;
+  margin-left: 85%;
 }
 
-@media screen and (max-width:900px) {
-    .modalDeleteElements {
-        width: auto;
-        max-width: 724px;
-        height: max-content;
-        margin: 55px 5%;
-    }
+@media screen and (max-width: 900px) {
+  .modalDeleteElements {
+    width: auto;
+    max-width: 724px;
+    height: max-content;
+    margin: 55px 5%;
+  }
 
-    #descriptionDelete {
-        width: 95%;
-        max-width: 724px;
-    }
+  #descriptionDelete {
+    width: 95%;
+    max-width: 724px;
+  }
 
-    #inactivate {
-        margin-left: 75%;
-    }
+  #inactivate {
+    margin-left: 75%;
+  }
 }

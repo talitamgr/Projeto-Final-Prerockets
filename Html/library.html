@@ -1,133 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <title>Library - Biblioteca</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../CSS/styleLibrary.css">
-    <link rel="stylesheet" href="../CSS/styleHeader.css">
-    <link rel="stylesheet" href="../CSS/styleModalBook.css">
-    <link rel="stylesheet" href="../CSS/styleModalRentBook.css">
-    <link rel="stylesheet" href="../CSS/styleModalReturnBook.css">
-    <link rel="stylesheet" href="../CSS/styleModalDeleteBook.css">
-    <link rel="stylesheet" href="../CSS/styleModalInactive.css">
-    <link rel="stylesheet" href="../CSS/styleModalHistoric.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../CSS/styleLibrary.css" />
+    <link rel="stylesheet" href="../CSS/styleHeader.css" />
+    <link rel="stylesheet" href="../CSS/styleModalBook.css" />
+    <link rel="stylesheet" href="../CSS/styleModalRentBook.css" />
+    <link rel="stylesheet" href="../CSS/styleModalReturnBook.css" />
+    <link rel="stylesheet" href="../CSS/styleModalDeleteBook.css" />
+    <link rel="stylesheet" href="../CSS/styleModalInactive.css" />
+    <link rel="stylesheet" href="../CSS/styleModalHistoric.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div id="logoLibrary">
-            <img src="../assets/imgLogin/Logo.svg" alt="Logo Library">
+      <div id="logoLibrary">
+        <img src="../assets/imgLogin/Logo.svg" alt="Logo Library" />
+      </div>
+      <div>
+        <div class="btnHamburg" id="user">
+          <img src="../assets/imgHome/person_black_24dp (1).svg" />
+          <p class="nameUser">Usuário</p>
+          <button class="headerBtn">
+            <img src="../assets/imgHome/Arrow.svg" />
+          </button>
         </div>
-        <div>
-            <div class="btnHamburg" id="user">
-                <img src="../assets/imgHome/person_black_24dp (1).svg">
-                <p class="nameUser">Usuário</p>
-                <button class="headerBtn"><img src="../assets/imgHome/Arrow.svg"></button>
-            </div>
-            <nav class="headerNav" style="display: none">
-                <a href="./login.html" class="btnLogOut">Sair</a>
-            </nav>
-        </div>
+        <nav class="headerNav" style="display: none">
+          <a href="./login.html" class="btnLogOut">Sair</a>
+        </nav>
+      </div>
     </header>
     <section class="menu">
-        <div class="menuTitle">
-            <a href="../Html/home.html"><img src="../assets/imgAdd/chevron_left_FILL0_wght400_GRAD0_opsz48.svg">
-                <h2>Home
-            </a><strong>/ Biblioteca</strong></h2>
+      <div class="menuTitle">
+        <h2>
+          <a href="../Html/home.html">
+            <img
+              src="../assets/imgAdd/chevron_left_FILL0_wght400_GRAD0_opsz48.svg"
+            />
+            Home
+          </a>
+          <strong>/ Biblioteca</strong>
+        </h2>
+      </div>
+      <div class="barSearch">
+        <div class="inputSearch">
+          <img src="../assets/imgAdd/Caminho 263.svg" />
+          <input
+            type="text"
+            id="searchTitle"
+            placeholder="Pesquisar livro..."
+          />
+          <button type="submit" class="button-yellow" onclick="searchBook()">
+            Buscar
+          </button>
         </div>
-        <div class="barSearch">
-            <div class="inputSearch">
-                <img src="../assets/imgAdd/Caminho 263.svg">
-                <input type="text" id="searchTitle" placeholder="Pesquisar livro...">
-                <button type="submit" class="button-yellow" onclick="searchBook()">Buscar</button>
-            </div>
-            <div class="material-textfield">
-                <select id="select" style="min-width: 260px; min-height: 53px" required>
-                    <option value="">Selecione</option>
-                    <option value="genre">Gênero</option>
-                    <option value="author">Autor(a)</option>
-                    <option value="systemEntryDate">Data de entrada</option>
-                    <option value="tittle">Título</option>
-                </select>
-                <label>Filtrar</label>
-            </div>
+        <div class="material-textfield">
+          <select
+            id="select"
+            style="min-width: 260px; min-height: 53px"
+            required
+          >
+            <option value="">Selecione</option>
+            <option value="genre">Gênero</option>
+            <option value="author">Autor(a)</option>
+            <option value="systemEntryDate">Data de entrada</option>
+            <option value="tittle">Título</option>
+          </select>
+          <label>Filtrar</label>
         </div>
+      </div>
 
-        <div class="cardsBooks">
-
-        </div>
-
-
+      <div class="cardsBooks"></div>
     </section>
     <div class="no-modal" id="modal">
-        <div class="scrollModal">
-
-        </div>
+      <div class="scrollModal"></div>
     </div>
     <div class="no-modalRent">
-        <div class="scrollModalRent">
-            <div class="modalRentElements">
-                <button class="btnClose" onclick="closeModalRent()">X</button>
-                <h2>Informe os dados do aluno antes de continuar</h2>
-                <div class="material-textfield">
-                    <input type="text" placeholder=" " id="nameStudent" required>
-                    <label>Nome do aluno</label>
-                </div>
-                <div class="material-textfield">
-                    <input type="text" placeholder=" " id="classStudent" required>
-                    <label>Turma</label>
-                </div>
-                <div class="material-textfield">
-                    <input type="date" id="dateLoan" required>
-                    <label>Data de entrada</label>
-                </div>
-                <div class="material-textfield">
-                    <input type="date" id="dateDelivery" required>
-                    <label>Data de entrega</label>
-                </div>
-                <button class="btnRent saveRent">Emprestar</button>
-            </div>
+      <div class="scrollModalRent">
+        <div class="modalRentElements">
+          <button class="btnClose" onclick="closeModalRent()">X</button>
+          <h2>Informe os dados do aluno antes de continuar</h2>
+          <div class="material-textfield">
+            <input type="text" placeholder=" " id="nameStudent" required />
+            <label>Nome do aluno</label>
+          </div>
+          <div class="material-textfield">
+            <input type="text" placeholder=" " id="classStudent" required />
+            <label>Turma</label>
+          </div>
+          <div class="material-textfield">
+            <input type="date" id="dateLoan" required />
+            <label>Data de entrada</label>
+          </div>
+          <div class="material-textfield">
+            <input type="date" id="dateDelivery" required />
+            <label>Data de entrega</label>
+          </div>
+          <button class="btnRent saveRent">Emprestar</button>
         </div>
+      </div>
     </div>
     <div class="no-modalReturn">
-        <div class="scrollModalReturn">
-
-        </div>
+      <div class="scrollModalReturn"></div>
     </div>
     <div class="no-modalDelete">
-        <div class="modalDeleteElements">
-            <button class="btnClose" onclick="closeModalDelete()">X</button>
-            <h2>Inativar Livro</h2>
-            <div class="material-textfield">
-                <textarea placeholder=" " id="descriptionDelete" required></textarea>
-                <label>Descrição</label>
-            </div>
-            <button id="inactivate" class="btnDelete">Inativar</button>
+      <div class="modalDeleteElements">
+        <button class="btnClose" onclick="closeModalDelete()">X</button>
+        <h2>Inativar Livro</h2>
+        <div class="material-textfield">
+          <textarea placeholder=" " id="descriptionDelete" required></textarea>
+          <label>Descrição</label>
         </div>
+        <button id="inactivate" class="btnDelete">Inativar</button>
+      </div>
     </div>
     <div class="no-modalInactive">
-        <div class="scrollModalInactive">
-
-        </div>
+      <div class="scrollModalInactive"></div>
     </div>
     <div class="no-modalHistoric">
-        <div class="scrollModalHistoric">
-            <h2>Histórico de emprestimo do livro</h2>
-            <table class="tableHistoric">
-
-            </table>
-        </div>
+      <div class="scrollModalHistoric">
+        <h2>Histórico de emprestimo do livro</h2>
+        <table class="tableHistoric"></table>
+      </div>
     </div>
     <script src="../Js/logOut.js"></script>
     <script src="../Js/library.js"></script>
     <script src="../Js/modal.js"></script>
     <script src="../Js/saveData.js"></script>
-</body>
-
+  </body>
 </html>
