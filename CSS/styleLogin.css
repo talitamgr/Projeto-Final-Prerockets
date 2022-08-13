@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('../imgLogin/Retângulo\ 310.svg'),
-        url("../imgLogin/emil-widlund-xrbbXIXAWY0-unsplash@2x.png");
+    background-image: url('../assets/imgLogin/Retângulo\ 310.svg'),
+        url("../assets/imgLogin/emil-widlund-xrbbXIXAWY0-unsplash@2x.png");
     background-position: center, center bottom;
     background-size: cover, cover;
     height: 100vh;

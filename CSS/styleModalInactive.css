@@ -83,7 +83,7 @@
 }
 
 .btnRentInactive::before {
-    content: url(../imgAdd/auto_stories_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
+    content: url(../assets/imgAdd/auto_stories_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
     width: 21px;
     position: relative;
     left: -12px;
