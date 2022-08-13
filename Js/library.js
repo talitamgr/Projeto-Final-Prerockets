@@ -2,6 +2,8 @@ var cards = document.querySelector('.cardsBooks')
 var divModal = document.querySelector('.no-modal')
 var inputSearch = document.querySelector("#searchTitle")
 var inputSelect = document.querySelector('select')
+var book = localStorage.getItem('book')
+var bookIndex = localStorage.getItem('index');
 
 let data;
 
@@ -10,6 +12,10 @@ fetch('../data.json').then(response => {
     return data
 }).then(body => {
     data = body.data
+    if(book){
+        data.books.splice(bookIndex, 1, JSON.parse(book))
+        checkBook(bookIndex)
+    }
     var books = data.books
     for (var i = 0; i < books.length; i++) {
         showElements(books[i], i)

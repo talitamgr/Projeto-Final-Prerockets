@@ -8,9 +8,14 @@ var divModalInactive = document.querySelector('.no-modalInactive')
 var divScrollModalInactive = document.querySelector('.scrollModalInactive')
 var divModalHistoric = document.querySelector('.no-modalHistoric')
 var saveChange;
+var book = localStorage.getItem('book')
 
 function checkBook(index) {
     var rentHistory = data.books[index].rentHistory
+
+    if(book){
+        saveChange = true;
+    }
 
     if (data.books[index].status.isActive) {
         if (rentHistory.length == 0) {
@@ -41,6 +46,7 @@ function closeModal() {
     divModal.classList.remove('modal')
     divModal.classList.add('no-modal')
     if (saveChange == true) {
+        localStorage.removeItem('book')
         saveNewData()
         saveChange == false;
     }
@@ -215,6 +221,7 @@ function closeModalReturn() {
     divModalReturn.classList.remove('modalReturn')
     divModalReturn.classList.add('no-modalReturn')
     if (saveChange == true) {
+        localStorage.removeItem('book')
         saveNewData()
         saveChange = false;
     }
@@ -231,6 +238,9 @@ function returnBook(index) {
 }
 
 function editBook(index) {
+    if(saveChange){
+        localStorage.setItem('book', JSON.stringify(data.books[index]))
+    }
     localStorage.setItem('index', index);
     window.location.href = '../Html/editBook.html'
 }
@@ -309,6 +319,7 @@ function closeModalInactive() {
     divModalInactive.classList.remove('modalInactive')
     divModalInactive.classList.add('no-modalInactive')
     if (saveChange == true) {
+        localStorage.removeItem('book')
         saveNewData()
         saveChange = false;
     }

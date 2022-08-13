@@ -5,6 +5,7 @@ var dateInput = document.getElementById('date')
 var synopsis = document.getElementById('synopsis')
 var fileDisplayArea = document.querySelector('#cover');
 var i = localStorage.getItem('index');
+var book = localStorage.getItem('book');
 
 let data;
 
@@ -13,6 +14,9 @@ fetch('../data.json').then(response => {
     return data
 }).then(body => {
     data = body.data
+    if(book){
+        data.books.splice(i, 1, JSON.parse(book))
+    }
     editThisBook()
 })
 
@@ -91,7 +95,7 @@ function saveData() {
             "synopsis": synopsis.value,
             "rentHistory": data.books[i].rentHistory
         })
-
+        localStorage.removeItem('book')
         saveNewData()
     }
 }
