@@ -1,5 +1,6 @@
 # Projeto-Final-Prerockets
 Projeto Final do processo Pré-Rockets sobre o controle de uma biblioteca.
+Para ver o pleno funcionamento do projeto é necessário utilizar um web server (utilizei o live server do vs code). Configurei esse para ignorar arquivos temporários do chrome, que estavam interrompendo o processo de salvamento do json e corrompendo-o ("*.crswap").
 
  Este projeto se resume no controle dos empréstimos de livros em uma biblioteca. Na qual, alguns bibliotecários, já previamente cadastrados, 
 podem realizar as seguintes ações:
