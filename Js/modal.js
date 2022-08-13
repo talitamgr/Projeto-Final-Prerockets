@@ -52,17 +52,9 @@ function openModal(index) {
     divModalResponsive.textContent = ''
     var modal = document.createElement('div')
     modal.classList.add('modalElements')
-    buttonConstructor("btnClose", "X", closeModal, "", modal)
-    var img = document.createElement('img');
-    img.src = data.books[index].image;
-    modal.appendChild(img);
     var divInformations = document.createElement('div')
-    var title = document.createElement('h2')
-    var titleContent = document.createTextNode(data.books[index].tittle)
-    title.appendChild(titleContent)
-    divInformations.appendChild(title)
-    modal.appendChild(divInformations)
-
+    buttonConstructor("btnClose", "X", closeModal, "", modal)
+    firstPartModal(index, modal, divInformations)
     modalConstructor('Sinopse', 'synopsis', index, divInformations)
     modalConstructor('Autor', 'author', index, divInformations)
     modalConstructor('Gênero', 'genre', index, divInformations)
@@ -73,6 +65,16 @@ function openModal(index) {
     buttonConstructor("btnHistoric", "Histórico", historicBook, index, modal)
 
     divModalResponsive.appendChild(modal)
+}
+function firstPartModal(index, modal, divInformations){
+    var img = document.createElement('img');
+    img.src = data.books[index].image;
+    modal.appendChild(img);
+    var title = document.createElement('h2')
+    var titleContent = document.createTextNode(data.books[index].tittle)
+    title.appendChild(titleContent)
+    divInformations.appendChild(title)
+    modal.appendChild(divInformations)
 }
 
 function modalConstructor(subtitle, item, index, modal) {
@@ -459,31 +461,4 @@ function closeModalHistoric(i) {
     divModalHistoric.classList.remove('modalHistoric')
     divModalHistoric.classList.add('no-modalHistoric')
     checkBook(i)
-}
-
-function saveNewData() {
-    var file = new Blob([JSON.stringify({ data })], { type: "text/plain" });
-
-    const saveFile = async blob => {
-        try {
-            const handle = await window.showSaveFilePicker({
-                suggestedName: 'data.json',
-                types: [
-                    {
-                        description: "Json",
-                        accept: { "text/plain": [".json"] },
-                    },
-                ],
-            })
-
-            const writable = await handle.createWritable()
-            await writable.write(blob)
-            await writable.close()
-
-            return handle
-        } catch (err) {
-            console.error(err.name, err.message)
-        }
-    }
-    saveFile(file)
 }

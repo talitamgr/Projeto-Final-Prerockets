@@ -6,63 +6,6 @@ body {
     margin: 0;
 }
 
-header {
-    background-color: white;
-    height: 96px;
-    color: #495057;
-    display: flex;
-    justify-content: space-between;
-    padding: 24px 34px;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-#logoLibrary img {
-    max-width: 120px;
-    max-height: 48px;
-}
-
-#user {
-    display: flex;
-    justify-content: right;
-    text-transform: capitalize;
-}
-
-#user img {
-    width: 24px;
-}
-
-.btnHamburg{
-    cursor: pointer;
-}
-
-.headerBtn {
-    background-color: white;
-    width: 24px;
-    height: 24px;
-    margin-top: 12px;
-    border: 0;
-    padding: 0;
-}
-
-.headerNav {
-    background-color: #F4F4F4;
-    border-radius: 5px;
-    height: 57px;
-    width: 148px;
-}
-
-.headerNav a {
-    display: block;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    color: #2A2A2A;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-}
-
 .menu {
     margin: 2.1%;
     border-radius: 5px;
