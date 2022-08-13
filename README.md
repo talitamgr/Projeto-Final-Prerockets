@@ -1,6 +1,7 @@
 # Projeto-Final-Prerockets
 Projeto Final do processo Pré-Rockets sobre o controle de uma biblioteca.
-Para ver o pleno funcionamento do projeto é necessário utilizar um web server (utilizei o live server do vs code). Configurei esse para ignorar arquivos temporários do chrome, que estavam interrompendo o processo de salvamento do json e corrompendo-o ("*.crswap").
+Para ver o pleno funcionamento do projeto é necessário utilizar um web server (utilizei o live server do vs code). 
+Devido à ocasionais falhas, onde o live server atualizava a página durante o salvamento do json, configurei esse para ignorar tanto arquivos temporários do chrome, quanto o data.json. Para isso foram adicionados "data.json*" e "*.crswap" na configuração "liveServer.settings.ignoreFiles" da extensão .
 
  Este projeto se resume no controle dos empréstimos de livros em uma biblioteca. Na qual, alguns bibliotecários, já previamente cadastrados, 
 podem realizar as seguintes ações:
